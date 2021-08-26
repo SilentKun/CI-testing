@@ -22,7 +22,8 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Newman Action
+      - name: Run API Tests
+        id: run-newman
         uses: anthonyvscode/newman-action@v1.1
         with:
           apiKey: PMAK-6127edbcffa99200347d31a0-e6ff17b0e53da0faf885390df4edc9da78
