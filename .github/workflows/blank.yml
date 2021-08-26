@@ -27,4 +27,4 @@ jobs:
         with:
           apiKey: PMAK-6127edbcffa99200347d31a0-e6ff17b0e53da0faf885390df4edc9da78
           collection: 13df1f74-81bd-4c80-a23a-aba31f0016a7
-          environmet: 572498e7-3163-4eed-9b8d-191fbbad90f0
+          environment: 572498e7-3163-4eed-9b8d-191fbbad90f0
