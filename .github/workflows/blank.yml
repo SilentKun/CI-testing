@@ -29,5 +29,5 @@ jobs:
           collectionID: 13df1f74-81bd-4c80-a23a-aba31f0016a7
           environmentID: 572498e7-3163-4eed-9b8d-191fbbad90f0
       - run: npm install -g newman
-      - run: newman run "https://api.getpostman.com/collections/${{collectionID}}?apikey=PMAK-6127edbcffa99200347d31a0-e6ff17b0e53da0faf885390df4edc9da78" --environment "https://api.getpostman.com/environments/${{ environmentID }}?apikey=PMAK-6127edbcffa99200347d31a0-e6ff17b0e53da0faf885390df4edc9da78"
+      - run: newman run "https://api.getpostman.com/collections/${{ collectionID }}?apikey=PMAK-6127edbcffa99200347d31a0-e6ff17b0e53da0faf885390df4edc9da78" --environment "https://api.getpostman.com/environments/${{ environmentID }}?apikey=PMAK-6127edbcffa99200347d31a0-e6ff17b0e53da0faf885390df4edc9da78"
 
