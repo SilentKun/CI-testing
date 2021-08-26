@@ -22,8 +22,8 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Newman Action
-        uses: matt-ball/newman-action@v0.2.4
+      - uses: actions/checkout@master
+      - uses: matt-ball/newman-action@master
         with:
           apiKey: PMAK-6127edbcffa99200347d31a0-e6ff17b0e53da0faf885390df4edc9da78
           collection: 13df1f74-81bd-4c80-a23a-aba31f0016a7
