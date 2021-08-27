@@ -38,17 +38,15 @@ jobs:
       - name: Make Directory for results
         run: mkdir -p testResults
       
-      - name: Run API tests
-        id: newman
-        run: |
-         newman run "https://api.getpostman.com/collections/15577376-13df1f74-81bd-4c80-a23a-aba31f0016a7?apikey=${{ secrets.postmanApiKey }}" \
-         --environment "https://api.getpostman.com/environments/15577376-572498e7-3163-4eed-9b8d-191fbbad90f0?apikey=${{ secrets.postmanApiKey }}" \
-         -r htmlextra --reporter-htmlextra-export testResults/htmlreport.html --reporter-htmlextra-darkTheme  > testResults/runreport1.html
+      - name: Run newman
+        id: summary
+        uses: silentkun/newmansummary-action@v1.1
     
       - name: Output the run Details
         uses: actions/upload-artifact@v2
         with: 
          name: RunReports
          path: testResults
+         
       - name: Get the output time
-        run: echo "${{ parseJSON(steps.newman.outputs) }}"
+        run: echo "The time was ${{ steps.summary.outputs.summary }}"
