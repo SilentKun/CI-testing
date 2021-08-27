@@ -35,7 +35,7 @@ jobs:
       
       - name: Run newman
         id: summary
-        uses: silentkun/newmansummary-action@v1.1
+        uses: silentkun/newmansummary-action@master
     
       - name: Output the run Details
         uses: actions/upload-artifact@v2
