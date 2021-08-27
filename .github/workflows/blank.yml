@@ -31,6 +31,7 @@ jobs:
           node-version: '12'
         
       - run: npm install
+    
           
       - name: Make Directory for results
         run: mkdir -p testResults
