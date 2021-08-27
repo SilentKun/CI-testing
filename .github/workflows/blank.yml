@@ -22,16 +22,7 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
-    
-      - name: Install node
-        uses: actions/setup-node@v2-beta
-        with:
-          node-version: '12'
-        
-      - run: npm install
-        
+
       - name: Make Directory for results
         run: mkdir -p testResults
       
@@ -46,4 +37,4 @@ jobs:
          path: testResults
          
       - name: Get the output time
-        run: echo "The time was ${{ steps.summary.outputs.summary }}"
+        run: echo "${{ steps.summary.outputs.summary }}"
