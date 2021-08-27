@@ -29,6 +29,8 @@ jobs:
       - name: Run newman
         id: summary
         uses: silentkun/newmansummary-action@master
+        with:
+          postmanApiKey: ${{ secrets.postmanApiKey }}
     
       - name: Output the run Details
         uses: actions/upload-artifact@v2
