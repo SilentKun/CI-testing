@@ -30,12 +30,8 @@ jobs:
         with:
           node-version: '12'
         
-      - name: Install newman
-        run: |
-          npm install -g newman
-          npm install -g newman-reporter-htmlextra
-          npm install @actions/core
-          
+      - run: npm install
+        
       - name: Make Directory for results
         run: mkdir -p testResults
       
