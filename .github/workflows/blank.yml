@@ -51,4 +51,4 @@ jobs:
          name: RunReports
          path: testResults
       - name: Get the output time
-        run: echo "${{ steps.newman.outputs }}"
+        run: echo "${{ parseJSON(steps.newman.outputs) }}"
