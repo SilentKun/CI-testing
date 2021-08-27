@@ -25,19 +25,24 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
     
-    
+      - name: Install node
+      - uses: actions/setup-node@v2-beta
+        with:
+          node-version: '12'
+      - name: Install newman
+        run: |
+         npm install -g newman
+         npm install -g newman-reporter-htmlextra
+       
       - name: Make Directory for results
         run: mkdir -p testResults
-        
-      - name: Run API Tests
-        id: run-newman
-        uses: anthonyvscode/newman-action@v1.1
-        with:
-          apiKey: ${{ secrets.postmanApiKey }}
-          collection: 15577376-13df1f74-81bd-4c80-a23a-aba31f0016a7
-          environment: 15577376-572498e7-3163-4eed-9b8d-191fbbad90f0
-          reporters: htmlextra
       
+      - name: Run API tests
+      - run: |
+          newman run "https://api.getpostman.com/collections/15577376-13df1f74-81bd-4c80-a23a-aba31f0016a7?apikey=${{ secrets.postmanApiKey }}" 
+          --environment "https://api.getpostman.com/environments/15577376-572498e7-3163-4eed-9b8d-191fbbad90f0?apikey=${{ secrets.postmanApiKey }}" 
+          -r htmlextra --reporter-htmlextra-export testResults/htmlreport.html --reporter-htmlextra-darkTheme  > testResults/runreport1.html
+    
       - name: Output the run Details
         uses: actions/upload-artifact@v2
         with: 
