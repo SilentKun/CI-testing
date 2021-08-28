@@ -39,4 +39,4 @@ jobs:
          path: testResults
          
       - name: Get the output time
-        run: echo "${{ steps.newman.outputs.summary.assertions.total }}"
+        run: echo "${{ steps.newman.outputs.summary }}"
