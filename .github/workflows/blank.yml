@@ -43,11 +43,6 @@ jobs:
          
       - name: Get the output time
         run: echo "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
-      - name: get version
-        id: version
-        uses: notiz-dev/github-action-json-property@release
-        with: 
-            path: ${{steps.run-newman.outputs.summary}}
-            prop_path: 'Run.Stats.Assertions.total'
-      - run: echo ${{steps.version.outputs.prop}} 
+      - name: Get stats
+        run: echo "${{ fromJson(steps.run-newman.outputs.summary.Run.Stats.Assertions).total }}"
 
