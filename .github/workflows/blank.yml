@@ -27,7 +27,7 @@ jobs:
         run: mkdir -p testResults
       
       - name: Run newman
-        id: summary
+        id: newman
         uses: silentkun/newmansummary-action@master
         with:
           postmanApiKey: ${{ secrets.postmanApiKey }}
@@ -39,4 +39,4 @@ jobs:
          path: testResults
          
       - name: Get the output time
-        run: echo "${{ steps.summary.outputs.summary }}"
+        run: echo "${{ steps.newman.outputs.summary.assertions.total }}"
