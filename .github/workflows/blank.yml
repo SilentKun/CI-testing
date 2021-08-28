@@ -48,6 +48,6 @@ jobs:
         uses: notiz-dev/github-action-json-property@release
         with: 
             path: ${{steps.run-newman.outputs.summary}}
-            prop_path: 'Run.Stats.Assertions'
+            prop_path: 'Run.Stats.Assertions.total'
       - run: echo ${{steps.version.outputs.prop}} 
 
