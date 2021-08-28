@@ -44,4 +44,4 @@ jobs:
       - name: Get the output time
         run: echo "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
       - name: Get stats
-        run: echo "${{ steps.run-newman.outputs.summary.Failures }}"
+        run: echo "${{ steps.run-newman.outputs.summary.Run.Failures }}"
