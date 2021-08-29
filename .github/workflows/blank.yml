@@ -23,8 +23,12 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
 
+      - name: Install Html extra
+        run: npm install -g newman-reporter-htmlextra
+
       - name: Make Directory for results
         run: mkdir -p testResults
+        
       - name: Run API Tests
         id: run-newman
         uses: silentkun/newman-action@master
