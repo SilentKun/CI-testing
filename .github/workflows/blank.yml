@@ -23,10 +23,6 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
 
-      - name: Install Reporter
-        run: |
-          npm install -g newman-reporter-htmlextra
-          
       - name: Make Directory for results
         run: mkdir -p testResults
         
@@ -38,7 +34,6 @@ jobs:
           collection: 15577376-13df1f74-81bd-4c80-a23a-aba31f0016a7
           environment: 15577376-572498e7-3163-4eed-9b8d-191fbbad90f0
           reporters: htmlextra
-          reporter: "{ \"htmlextra\": { \"export\": testResults/htmlreport.html }}"
               
       - name: Output the run Details
         uses: actions/upload-artifact@v2
