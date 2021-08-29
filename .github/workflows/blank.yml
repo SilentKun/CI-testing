@@ -45,4 +45,4 @@ jobs:
          path: testResults
          
       - name: Get the output time
-        run: echo ${{steps.run-newman.outputs.summary}}
+        run: echo ${{steps.run-newman.outputs.summary.Run.Stats.Requests.total}}
