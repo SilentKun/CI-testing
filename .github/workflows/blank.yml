@@ -25,7 +25,6 @@ jobs:
 
       - name: Make Directory for results
         run: mkdir -p testResults
-        
       - name: Run API Tests
         id: run-newman
         uses: silentkun/newman-action@master
