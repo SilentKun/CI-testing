@@ -23,9 +23,6 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
 
-      - name: Install Html extra
-        run: npm install newman-reporter-htmlextra
-
       - name: Make Directory for results
         run: mkdir -p testResults
         
