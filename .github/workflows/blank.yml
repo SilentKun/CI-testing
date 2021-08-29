@@ -42,4 +42,4 @@ jobs:
          path: testResults
          
       - name: Get the output time
-        run: echo "https://github.com/${{github.repository}}/actions/runs/${{github.run_id}}"
+        run: echo {{$steps.run-newman.outputs.summary}}
